@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela Filme</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tabela Filme</h1>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>ID Filme</th>
+            <th>Ano Lançamento</th>
+            <th>Gênero</th>
+            <th>Título</th>
+            <th>Visualizações</th>
+            <th>Ação</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>2024</td>
+            <td>Ação</td>
+            <td>Deadpool</td>
+            <td id="view-1">0</td>
+            <td><button onclick="adicionarVisualizacao(1)">+1 Visualização</button></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>2023</td>
+            <td>Ficção</td>
+            <td>O Criador</td>
+            <td id="view-2">0</td>
+            <td><button onclick="adicionarVisualizacao(2)">+1 Visualização</button></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>2003</td>
+            <td>Aventura</td>
+            <td>Piratas do Caribe</td>
+            <td id="view-3">0</td>
+            <td><button onclick="adicionarVisualizacao(3)">+1 Visualização</button></td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>2002</td>
+            <td>Ação</td>
+            <td>Homem-Aranha</td>
+            <td id="view-4">0</td>
+            <td><button onclick="adicionarVisualizacao(4)">+1 Visualização</button></td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>1994</td>
+            <td>Comédia</td>
+            <td>O Máskara</td>
+            <td id="view-5">0</td>
+            <td><button onclick="adicionarVisualizacao(5)">+1 Visualização</button></td>
+        </tr>
+    </table>
+
+    <script>
+        // Objeto para armazenar as visualizações de cada filme
+        const visualizacoes = {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0
+        };
+
+        // Função que incrementa a visualização do filme correspondente
+        function adicionarVisualizacao(idFilme) {
+            visualizacoes[idFilme]++;
+            document.getElementById('view-' + idFilme).innerText = visualizacoes[idFilme];
+        }
+    </script>
+</body>
+</html>
